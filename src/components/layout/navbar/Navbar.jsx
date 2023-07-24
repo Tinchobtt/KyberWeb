@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom"
 import logo from '../../../assets/Logotipo.png'
 import { useEffect, useRef, useState } from "react"
-import { MenuWidget } from "../../common/menuWidget/MenuWidget";
 import Instagram from "../../common/icons/instagram";
 import Whatsapp from "../../common/icons/Whatsapp";
 
@@ -10,17 +9,24 @@ const Navbar = () => {
 
   const [navOpen, setNavOpen] = useState(false);// Estado de apertura de nav
   const [subMenuOpen, setSubMenuOpen] = useState(false);// Estado de apertura de subMenu
+  const [menuWidgetOpen, setMenuWidgetOpen] = useState(false)//Estado de cambio del icono del Nav
   const [ddmHeight, setDdmHeight] = useState(0)//ALtura del subMenu
 
   const deployNav = ()=>{//Apertura y cierre del nav
     setNavOpen(!navOpen)
     subMenuOpen && deploySubMenu();
+    menuWidgetOpen && setMenuWidgetOpen(!menuWidgetOpen);
   }
   
   const deploySubMenu = ()=>{ //Apertura y cierre del subMenu
     let subMenu = ulRef.current;
     subMenu.style.height = subMenuOpen ? '0' : ddmHeight;
     setSubMenuOpen(!subMenuOpen)
+  }
+
+  const handleWidget = ()=>{ //Cambio de aspecto del icono del Nav
+    setMenuWidgetOpen(!menuWidgetOpen);
+    deployNav()
   }
 
   useEffect( ()=>{ //Calcula la altura del subMenu
@@ -52,7 +58,6 @@ const Navbar = () => {
             </ul>
           </li>
           <li className="nav-item"><Link to={'/portfolio'} className="nav-link" onClick={deployNav}>portfolio</Link></li>
-          <li className="nav-item"><Link to={'/about'} className="nav-link" onClick={deployNav}>About</Link></li>
           <li className="nav-item"><Link to={'/contact'} className="nav-link" onClick={deployNav}>Contact</Link></li>
         </ul>
         <div className="media-container">
@@ -60,7 +65,11 @@ const Navbar = () => {
           <Whatsapp style={{marginLeft: '2rem'}} />
         </div>
       </nav>
-      <MenuWidget deployNav={deployNav}/>
+      <div className="menu-icon" onClick={handleWidget}>
+        <span className={menuWidgetOpen ? "line line1 activeLine1" : "line line1"}></span>
+        <span className={menuWidgetOpen ? "line line2 activeLine2" : "line line2"}></span>
+        <span className={menuWidgetOpen ? "line line3 activeLine3" : "line line3"}></span>
+      </div>
     </header>
   )
 }
