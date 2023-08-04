@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom"
-import logo from '../../../assets/Logotipo.png'
+import logo from '../../../assets/LogoC.png'
 import { useEffect, useRef, useState } from "react"
 import Instagram from "../../common/icons/instagram";
 import Whatsapp from "../../common/icons/Whatsapp";
+import { services } from "../../../../services";
 
 const Navbar = () => {
   const ulRef = useRef(null);
@@ -39,7 +40,7 @@ const Navbar = () => {
   }, [])
 
   return (
-    <header>
+    <header className="shadow">
       <div className="logo-container">
         <Link to={'/'} className='logo-link'>
           <img src={logo} alt="kyberweb logo" />
@@ -51,18 +52,19 @@ const Navbar = () => {
           <li className="nav-item drop-item">
             <Link to='#' className="nav-link drop-link" onClick={deploySubMenu}>Services</Link>
             <ul className='sub-menu' ref={ulRef}>
-              <li className="nav-item"><Link to='#' className="nav-link" onClick={deployNav}>Web Development</Link></li>
-              <li className="nav-item"><Link to='#' className="nav-link" onClick={deployNav}>Web Design</Link></li>
-              <li className="nav-item"><Link to='#' className="nav-link" onClick={deployNav}>Social Media Managment</Link></li>
-              <li className="nav-item"><Link to='#' className="nav-link" onClick={deployNav}>Ilustration</Link></li>
+              {
+                services.map( serv => {
+                  return <li key={serv.id} className="nav-item"><Link to={`/serviceDetail/${serv.id}`} className="nav-link" onClick={deployNav}>{serv.name}</Link></li>
+                })
+              }
             </ul>
           </li>
           <li className="nav-item"><Link to={'/portfolio'} className="nav-link" onClick={deployNav}>portfolio</Link></li>
           <li className="nav-item"><Link to={'/contact'} className="nav-link" onClick={deployNav}>Contact</Link></li>
         </ul>
         <div className="media-container">
-          <Instagram />
-          <Whatsapp style={{marginLeft: '2rem'}} />
+          <Whatsapp style={{width: '2.8rem'}} />
+          <Instagram style={{width: '3rem', marginLeft: '2rem'}}/>
         </div>
       </nav>
       <div className="menu-icon" onClick={handleWidget}>

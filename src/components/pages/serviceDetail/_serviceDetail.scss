@@ -1,0 +1,81 @@
+.service-detail{
+    .portada{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 2rem 1rem;
+        max-height: 300px;
+        h2{
+            width: auto;
+            font-size: clamp(22px, 8vw, 72px);
+            background: -webkit-linear-gradient(0deg, rgba(202,3,74,1) 0%, rgba(27,170,206,1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-align: center;
+        }
+        img{
+            max-width: 50%;
+            height: 50%;
+            max-height: 130px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+    }
+    .service-content{
+        padding: 1rem 0;
+        .label{
+            display: inline-block;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: $darker;
+            h3{
+                font-size: 16px;
+                font-weight: 300;
+                color: $light;
+            }
+        }
+        .content{
+            margin: 1rem;
+            p, li{
+                font-size: 16px;
+                font-weight: 300;
+                line-height: 25px;
+                margin-bottom: 2rem;
+                color: $light;
+                list-style-type: decimal;
+                list-style-position: inside;
+            }
+        }
+    }
+}
+@media (min-width: 768px){
+    .service-detail{
+        .portada{
+            flex-direction: row;
+            height: 250%;
+            h2{
+                text-align: start;
+            }
+            img{
+                height: 100%;
+                padding: 1rem;
+                max-height: unset;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+@media (min-width: 1024px){
+    .service-detail{
+        .portada{
+            justify-content: space-around;
+            height: 250px;
+            img{
+                height: 100%;
+                padding: 0;
+            }
+        }
+    }
+}

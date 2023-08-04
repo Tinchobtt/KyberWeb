@@ -11,7 +11,7 @@ export const routes = [
     },
     {
         id: 'service',
-        path : '/serviceDetail:id',
+        path : '/serviceDetail/:id',
         Element : ServiceDetail
     },
     {
@@ -21,7 +21,7 @@ export const routes = [
     },
     {
         id: 'contact',
-        path : '/contact',
+        path : '/contact/:type',
         Element : Contact
     }
 ]

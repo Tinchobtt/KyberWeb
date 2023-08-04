@@ -1,7 +1,14 @@
+import Hero from "./homeSections/Hero/Hero";
+import Services from "./homeSections/Services/Services";
+import Package from "./homeSections/Package/Package";
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <main>
+      <Hero />
+      <Services />
+      <Package />
+    </main>
   )
 }
 

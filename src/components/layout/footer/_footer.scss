@@ -1,0 +1,47 @@
+footer{
+    padding: 1rem;
+    background-color: $darker;
+    .logo-container{
+        width: 5rem;
+        margin-bottom: 2rem;
+        .logo-link{
+            display: block;
+            width: 100%;
+            height: 100%;
+            img{
+                width: 100%;
+                pointer-events: none;
+            }
+        }
+    }
+    .nav-footer{
+        .subtitle{
+            margin-bottom: .5rem;
+            a{
+                font-size: 18px;
+                font-weight: 500;
+                color: $light;
+            }
+        }
+        .nav-list{
+            margin-bottom: 2rem;
+            li{
+                margin-bottom: .5rem;
+                a{
+                    font-size: 14px;
+                    color: #fff;
+                    opacity: .75;
+                }
+            }
+        }
+    }
+    .red-box{
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+        span{
+            margin-left: 1rem;
+            color: $light;
+        }
+    }
+}

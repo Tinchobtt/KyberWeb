@@ -1,12 +1,15 @@
 import { BrowserRouter } from "react-router-dom"
-import AppRoutes from "./routes/AppRoutes"
+import AppRouter from "./routes/AppRouter"
+import PackageContextProvider from "./context/PackageContext"
 
 const App = ()=> {
 
   return (
     <>
-        <BrowserRouter>
-        <AppRoutes />
+      <BrowserRouter>
+        <PackageContextProvider>
+          <AppRouter />
+        </PackageContextProvider>
       </BrowserRouter>
     </>
   )

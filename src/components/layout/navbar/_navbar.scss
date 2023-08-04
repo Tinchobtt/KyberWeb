@@ -1,9 +1,13 @@
 header{
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
     height: 4rem;
     padding: 10px 1rem;
+    background-color: $dark;
     overflow: hidden;
+    z-index: 4;
     .logo-container{
         height: 100%;
         z-index: 2;

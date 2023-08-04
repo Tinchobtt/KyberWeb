@@ -3,7 +3,7 @@ import PageNotFound from '../components/pages/404/PageNotFound'
 import { Route, Routes } from 'react-router-dom'
 import Layout from '../components/layout/Layout'
 
-const AppRoutes = () => {
+const AppRouter = () => {
   return (
     <Routes>
         <Route element={<Layout />}>
@@ -16,4 +16,4 @@ const AppRoutes = () => {
   )
 }
 
-export default AppRoutes
+export default AppRouter

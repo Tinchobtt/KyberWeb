@@ -1,4 +1,15 @@
 @import './sass/root';
 @import './sass/reset';
 @import './sass/base';
+@import './sass/utilities';
 @import './components/layout/navbar/navbar';
+@import './components/layout/footer/footer';
+@import './components/pages/home/home';
+@import './components/pages/home/homeSections/Hero/hero';
+@import './components/pages/home/homeSections/Services/services';
+@import './components/pages/home/homeSections/Package/package';
+@import './components/pages/home/homeSections/Hero/hero';
+@import './components/common/ServiceCard/serviceCard';
+@import './components/common/PackageCard/packageCard';
+@import './components/pages/serviceDetail/serviceDetail';
+@import './components/pages/portfolio/portfolio';
