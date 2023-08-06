@@ -25,7 +25,7 @@ export const services = [
     },
     {
         id: 4,
-        name: 'Illustration',
+        name: 'Digital illustration',
         desc: 'Creación de sitio web personalizado. Destaca en línea con un sitio funcional y atractivo.',
         img: 'https://res.cloudinary.com/dwyf1blmt/image/upload/v1691004183/Kyber%20Web/Portadas/ilustration_c4t6pu.png',
         steps: '',

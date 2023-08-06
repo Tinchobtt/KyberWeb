@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom"
-import logo from '../../../assets/LogoC.png'
-import { useEffect, useRef, useState } from "react"
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
+import logo from '../../../assets/LogoC.png';
+import { useEffect, useRef, useState } from "react";
 import Instagram from "../../common/icons/instagram";
 import Whatsapp from "../../common/icons/Whatsapp";
 import { services } from "../../../../services";
@@ -42,25 +43,25 @@ const Navbar = () => {
   return (
     <header className="shadow">
       <div className="logo-container">
-        <Link to={'/'} className='logo-link'>
+        <HashLink to={'/#start'} className='logo-link'>
           <img src={logo} alt="kyberweb logo" />
-        </Link>
+        </HashLink>
       </div>
       <nav className={navOpen ? 'navOpen' : ''}>
         <ul className="nav-menu">
-          <li className="nav-item"><Link to={'/'} className="nav-link" onClick={deployNav}>Home</Link></li>
+          <li className="nav-item"><HashLink to={'/#start'} className="nav-link" onClick={deployNav}>Home</HashLink></li>
           <li className="nav-item drop-item">
             <Link to='#' className="nav-link drop-link" onClick={deploySubMenu}>Services</Link>
             <ul className='sub-menu' ref={ulRef}>
               {
                 services.map( serv => {
-                  return <li key={serv.id} className="nav-item"><Link to={`/serviceDetail/${serv.id}`} className="nav-link" onClick={deployNav}>{serv.name}</Link></li>
+                  return <li key={serv.id} className="nav-item"><HashLink to={`/serviceDetail/${serv.id}#start`} className="nav-link" onClick={deployNav}>{serv.name}</HashLink></li>
                 })
               }
             </ul>
           </li>
           <li className="nav-item"><Link to={'/portfolio'} className="nav-link" onClick={deployNav}>portfolio</Link></li>
-          <li className="nav-item"><Link to={'/contact'} className="nav-link" onClick={deployNav}>Contact</Link></li>
+          <li className="nav-item"><Link to={'/contact/0'} className="nav-link" onClick={deployNav}>Contact</Link></li>
         </ul>
         <div className="media-container">
           <Whatsapp style={{width: '2.8rem'}} />

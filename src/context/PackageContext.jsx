@@ -17,6 +17,7 @@ const PackageContextProvider = ({children}) => {
     }
     let data = {
         packages,
+        setYourPackage,
         yourPackage,
         packageToYours,
         yoursToPackage

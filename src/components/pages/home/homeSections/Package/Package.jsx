@@ -2,7 +2,7 @@ import { useContext } from "react";
 import PackageCard from "../../../../common/PackageCard/PackageCard";
 import { PackageContext } from "../../../../../context/PackageContext";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Package = () => {
     const {packages, yourPackage, packageToYours, yoursToPackage} = useContext(PackageContext)
@@ -28,8 +28,8 @@ const Package = () => {
             }
             </div>
         </div>
-        <Button variant="contained" sx={{textTransform: 'unset', borderRadius: '10px', alignSelf: 'center', margin: '1rem'}}>
-            <Link to={'/contact/-1'} style={{color: '#fff'}}>Get it!</Link>
+        <Button variant="contained" disabled={yourPackage.length === 0} sx={{textTransform: 'unset', borderRadius: '10px', alignSelf: 'center', margin: '1rem'}}>
+            <HashLink to={'/contact/-1#start'} style={{color: '#fff'}}>Get it!</HashLink>
         </Button>
       </section>
   )

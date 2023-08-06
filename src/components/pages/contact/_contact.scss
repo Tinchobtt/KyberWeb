@@ -1,0 +1,38 @@
+#contact{
+    form{
+        display: flex;
+        flex-direction: column;
+        margin: 3rem 0;
+        .input{
+            margin-bottom: 2rem;
+        }
+        .textarea{
+            min-height: 100px;
+            margin-bottom: 2rem;
+            padding: 16.5px 14px;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 14px;
+            resize: none;
+            background-color: transparent;
+            &:hover{
+                border: 1px solid #fff;
+            }
+        }
+        .package-items{
+            margin-bottom: 1rem;
+            background-color: rgba($color: $light, $alpha: .8);
+        }
+        .terms{
+            margin-bottom: 2rem;
+            .checkbox-label{
+                color: $light;
+                margin-top: 2rem;
+            }
+        }
+        button{
+            width: 150px;
+            margin: 2rem auto 0;
+        }
+    }
+}

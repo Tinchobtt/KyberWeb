@@ -24,6 +24,9 @@
         }
     }
     .service-content{
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3rem;
         padding: 1rem 0;
         .label{
             display: inline-block;

@@ -21,4 +21,15 @@
             color: #fff;
         }
     }
+    a{
+        display: block;
+        button{
+            width: 100%;
+            font-size: clamp(16px, 3vw, 18px);
+            font-weight: 400;
+            text-transform: inherit;
+            background-color: #006ED6;
+                
+        }
+    }
 }

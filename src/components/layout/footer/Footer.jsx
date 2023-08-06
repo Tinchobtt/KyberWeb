@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"
 import { HashLink } from 'react-router-hash-link';
 import logo from '../../../assets/LogoC.png'
 import Whatsapp from "../../common/icons/Whatsapp"
@@ -8,15 +7,15 @@ const Footer = () => {
   return (
     <footer className="shadow">
       <div className="logo-container">
-        <Link to={'/'} className='logo-link'>
+        <HashLink to={'/#start'} className='logo-link'>
           <img src={logo} alt="kyberweb logo" />
-        </Link>
+        </HashLink>
       </div>
       <nav className="nav-footer">
         <h3 className="subtitle"><HashLink to="/#start">home</HashLink></h3>
         <ul className="nav-list">
-          <li><HashLink to="/#services">Services</HashLink></li>
-          <li><HashLink to="/#package">Packages</HashLink></li>
+          <li><HashLink smooth to="/#services">Services</HashLink></li>
+          <li><HashLink smooth to="/#package">Packages</HashLink></li>
         </ul>
         <h3 className="subtitle"><HashLink to="/#services">Services</HashLink></h3>
         <ul className="nav-list">
