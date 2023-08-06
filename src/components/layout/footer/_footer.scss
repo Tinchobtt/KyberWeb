@@ -33,13 +33,17 @@ footer{
                     opacity: .75;
                 }
             }
+            .nav-list-contact{
+                display: flex;
+                align-items: center;
+            }
         }
     }
     .red-box{
         display: flex;
         align-items: center;
         margin-bottom: 1rem;
-        span{
+        .red-box-link{
             margin-left: 1rem;
             color: $light;
         }

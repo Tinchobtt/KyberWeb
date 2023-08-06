@@ -11,11 +11,11 @@ const ServiceDetail = () => {
     <main id="serviceDetail" className="service-detail">
       <section className="portada shadow">
         <h2>{service.name}</h2>
-        <img src={service.img} alt="" />
+        <img src={service.img} alt={service.name} />
       </section>
       <section className="service-content">
         <div className="label">
-          <h3>What is {service.name}?</h3>
+          <h3><span>What is {service.name}?</span></h3>
         </div>
         <div className="content">
           <p>

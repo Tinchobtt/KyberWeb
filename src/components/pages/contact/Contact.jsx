@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from 'Yup';
 import { services } from "../../../../services";
+import Swal from "sweetalert2";
 
 const Contact = () => {
   const { type } = useParams()
@@ -25,6 +26,13 @@ const Contact = () => {
       //Armado de Mail
       console.log(values.auth)
       //Seteado del array yourPackage
+      Swal.fire({
+        position: 'center-center',
+        icon: 'success',
+        title: 'Your message has been sent successfully!',
+        text: 'We will get back to you as soon as possible',
+        showConfirmButton: true
+      })
       setYourPackage([]);
       action.resetForm();
     },
@@ -32,7 +40,7 @@ const Contact = () => {
       name: Yup.string().required().max(30),
       email: Yup.string().email().required(),
       phone: Yup.number().required(),
-      message: Yup.string().required(),
+      message: Yup.string(),
       auth: Yup.bool().required().oneOf([true], 'This is a required field')
     })
   })

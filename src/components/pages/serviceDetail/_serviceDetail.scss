@@ -29,14 +29,16 @@
         margin-bottom: 3rem;
         padding: 1rem 0;
         .label{
-            display: inline-block;
             margin: 1rem 0;
-            padding: 1rem;
-            background-color: $darker;
             h3{
+                display: inline-block;
+                max-width: 90%;
+                height: auto;
+                padding: 1rem;
                 font-size: 16px;
                 font-weight: 300;
                 color: $light;
+                background-color: $darker;
             }
         }
         .content{
