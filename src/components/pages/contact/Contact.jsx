@@ -1,17 +1,19 @@
 import { Accordion, AccordionDetails, AccordionSummary, Button, Checkbox, FormControlLabel, MenuItem, TextField, ThemeProvider , Typography, createTheme } from "@mui/material"
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { useContext } from "react"
+import { useContext, useRef } from "react"
 import { PackageContext } from "../../../context/PackageContext"
 import { useParams } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from 'Yup';
 import { services } from "../../../../services";
+import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
 
 const Contact = () => {
   const { type } = useParams()
   let service = Number(type) > 0 && services.find( serv => serv.id === Number(type))
   const { yourPackage, setYourPackage } = useContext(PackageContext)
+  const form = useRef();
 
   const {handleSubmit, handleChange, handleBlur, touched, values, errors, isSubmitting} = useFormik({
     initialValues: {
@@ -20,19 +22,28 @@ const Contact = () => {
       phone: '',
       message: '',
       auth: false,
-      info: false
+      info: false,
     },
     onSubmit: (values, action)=>{
-      //Armado de Mail
-      console.log(values.auth)
-      //Seteado del array yourPackage
-      Swal.fire({
-        position: 'center-center',
-        icon: 'success',
-        title: 'Your message has been sent successfully!',
-        text: 'We will get back to you as soon as possible',
-        showConfirmButton: true
-      })
+      emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, import.meta.env.VITE_PUBLIC_KEY)
+      .then(() => {
+          Swal.fire({
+            position: 'center-center',
+            icon: 'success',
+            title: 'Your message has been sent successfully!',
+            text: 'We will get back to you as soon as possible',
+            showConfirmButton: true
+          })
+      }, (error) => {
+        Swal.fire({
+          position: 'top-end',
+          icon: 'error',
+          title: 'Oops!',
+          text: 'Something went wrong!',
+          showConfirmButton: true
+        })
+      });
+      
       setYourPackage([]);
       action.resetForm();
     },
@@ -54,7 +65,7 @@ const Contact = () => {
     <main id="contact">
       <section>
         <h3 className="section-title">Contact</h3>
-        <form onSubmit={handleSubmit}>
+        <form ref={form} onSubmit={handleSubmit}>
         <ThemeProvider theme={darkTheme}>
           <TextField 
             type="text"
