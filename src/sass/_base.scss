@@ -4,3 +4,21 @@ html, body{
 main, section{
     padding: 1rem;
 }
+/*SCROLL BAR*/
+/* width */
+::-webkit-scrollbar {
+    width: 14px;
+} 
+/* Track */
+::-webkit-scrollbar-track {
+    background: $darker; 
+}  
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: $dark-blue; 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #2d3e5a; 
+}

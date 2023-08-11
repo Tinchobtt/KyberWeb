@@ -60,8 +60,8 @@ const Navbar = () => {
               }
             </ul>
           </li>
-          <li className="nav-item"><Link to={'/portfolio'} className="nav-link" onClick={deployNav}>portfolio</Link></li>
-          <li className="nav-item"><Link to={'/contact/0'} className="nav-link" onClick={deployNav}>Contact</Link></li>
+          <li className="nav-item"><HashLink to={'/portfolio#start'} className="nav-link" onClick={deployNav}>portfolio</HashLink></li>
+          <li className="nav-item"><HashLink to={'/contact/0#start'} className="nav-link" onClick={deployNav}>Contact</HashLink></li>
         </ul>
         <div className="media-container">
           <Whatsapp style={{width: '2.8rem'}} />

@@ -1,0 +1,23 @@
+#portfolio{
+    section{
+        .proyects-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem 0 4rem;
+            .proyect{
+                display: flex;
+                align-items: center;
+                width: 100%;
+                max-width: 320px;
+                aspect-ratio: 1/1;
+                background-color: rgba($color: $light, $alpha: .50);
+                margin-bottom: 1rem;
+                padding: 1rem;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

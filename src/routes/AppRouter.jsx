@@ -10,8 +10,8 @@ const AppRouter = () => {
             {
                 routes.map( ({id, path, Element}) => <Route key={id} path={path} element={<Element />} />)
             }
+          <Route path="*" element={<PageNotFound/>} />
         </Route>
-        <Route path="*" element={<PageNotFound/>} />
     </Routes>
   )
 }

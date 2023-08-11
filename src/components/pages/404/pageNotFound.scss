@@ -1,0 +1,32 @@
+#notFound{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 1rem;
+    h2{
+        font-size: clamp(28px, 10vw, 72px);
+        background: -webkit-linear-gradient(0deg, rgba(202,3,74,1) 0%, rgba(27,170,206,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+    }
+    p{
+        font-size: 14px;
+        text-align: center;
+        color: $light;
+        margin-bottom: 1rem;
+    }
+    .error404{
+        font-size: clamp(18px, 4vw, 22px);
+    }
+    a{
+        display: block;
+        font-size: clamp(18px, 4vw, 18px);
+        font-weight: 600;
+        margin: 2rem;
+        background: -webkit-linear-gradient(90deg, rgba(4,89,139,1) 0%, rgba(30,178,213,1) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
