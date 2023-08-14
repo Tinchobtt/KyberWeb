@@ -3,6 +3,7 @@ html, body{
 }
 main, section{
     padding: 1rem;
+    overflow-x: hidden;
 }
 /*SCROLL BAR*/
 /* width */
@@ -21,4 +22,10 @@ main, section{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #2d3e5a; 
+}
+
+@media screen and (min-width: 1024px) {
+    main, section{
+        padding: 1rem 2rem;
+    }
 }

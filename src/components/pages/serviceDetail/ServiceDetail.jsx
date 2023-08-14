@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { services } from "../../../../services"
+import { services } from "../../../lists/services"
 import { Button } from "@mui/material";
 import { HashLink } from "react-router-hash-link";
 
@@ -41,9 +41,11 @@ const ServiceDetail = () => {
             <li>Mantenimiento y actualizaciones: Después del lanzamiento, se ofrecerá un servicio de mantenimiento continuo para asegurar el correcto funcionamiento del sitio web. Además, se realizarán actualizaciones según sea necesario para agregar nuevas funcionalidades o mejorar la experiencia del usuario.</li>
           </ol>
         </div>
-        <Button variant="contained" sx={{alignSelf: 'center'}}>
-          <HashLink to={`/contact/${service.id}#start`} style={{color: '#fff'}}>I want this service!</HashLink>
-        </Button>
+        <div className="button-container" style={{display: 'flex', justifyContent: 'center'}}>
+            <Button variant="contained" sx={{textTransform: 'unset', borderRadius: '10px', alignSelf: 'center', padding: 0}}>
+              <HashLink to={`/contact/${service.id}#start`} style={{color: '#fff', width: '100%', height: '100%', padding: '1rem 2rem'}}>I want this service!</HashLink>
+            </Button>
+        </div>
       </section>
     </main>
   )

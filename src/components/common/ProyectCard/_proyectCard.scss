@@ -1,0 +1,35 @@
+.proyect-card{
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 1/1;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    transition: transform .3s;
+    overflow: hidden;
+    &:hover{
+        transform: scale(1.1, 1.1);
+    }
+    &::before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: -20%;
+        left: -20%;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: -webkit-linear-gradient(0deg, rgba(202,3,74,1) 0%, rgba(27,170,206,1) 100%);
+        opacity: .75;
+        filter: blur(30px);
+    }
+    .proyect-content{
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        img{
+            width: 100%;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import { services } from "../../../../../../services"
+import { services } from "../../../../../lists/services"
 import ServiceCard from "../../../../common/ServiceCard/ServiceCard"
 
 const Services = () => {

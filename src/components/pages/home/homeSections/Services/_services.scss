@@ -1,7 +1,23 @@
 .services{
     .services-container{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        margin: 2rem 0 3rem;
+    }
+}
+@media screen and (min-width: 700px) {
+    .services{
+        .services-container{
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+@media screen and (min-width: 1250px) {
+    .services{
+        .services-container{
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            
+        }
     }
 }

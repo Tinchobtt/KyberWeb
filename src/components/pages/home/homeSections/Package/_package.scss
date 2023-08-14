@@ -1,20 +1,41 @@
-.packageManager{
-    display: flex;
-    flex-direction: column;
+#package{
+    margin-bottom: 3rem;
     .package-system{
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, calc(50% - .5rem));
+        gap: .5rem;
+        margin: 2rem 0 3rem;
         .subtitle{
-            margin: 2rem 0;
+            margin: 1rem 0 2rem;
             color: #fff;
-            font-size: 14px;
+            font-size: clamp(16px, 3vw, 22px);
             text-align: center;
         }
         .packages{  
-            width: 50%;
-            padding-right: .5rem;
+            .package-container{
+                display: grid;
+                grid-template-columns: 100%;
+                justify-items: center;
+            }
         }
-        .yourPackage{
-            width: 50%;
+    }
+}
+@media screen and (min-width: 925px){
+    #package{
+        .package-system{
+            grid-template-columns: 100%;
+            grid-template-rows: 1fr 1fr;
+            .subtitle{
+                text-align: start;
+            }
+            .packages{  
+                .package-container{
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    justify-items: center;
+                    margin: 3rem 0;
+                }
+            }
         }
     }
 }

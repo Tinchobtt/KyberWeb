@@ -1,40 +1,52 @@
 .hero{
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
     width: 100%;
     height: calc(100vh - 64px);
     background-image: url('https://res.cloudinary.com/dwyf1blmt/image/upload/v1690112709/Kyber%20Web/Hero/fingerprint-b_td6fhk.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    // background-attachment: fixed;
     background-position: 55% 0;
-    .hero-intro{
-        h2{
-            color: $light;
-            font-size: 38px;
-            font-weight: 500;
-            text-align: center;
-            margin-bottom: 2rem;
+    .hero-position{
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: auto;
+        height: 100%;
+        .hero-intro{
+            h2{
+                color: $light;
+                font-size: clamp(30px, 10vw, 100px);
+                font-weight: 500;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+            h1{
+                color: $light;
+                font-size: clamp(18px, 4vw, 26px);
+                font-weight: 400;
+                text-align: center;
+            }
         }
-        h1{
-            color: $light;
-            font-size: 18px;
-            font-weight: 400;
-            text-align: center;
+        a{
+            display: block;
+            button{
+                padding: 1rem 2rem;
+                border: none;
+                border-radius: 10px;
+                font-size: 22px;
+                font-weight: 500;
+                color: #fff;
+                background-color: $blue;
+                cursor: pointer;
+            }
         }
     }
-    a{
-        display: block;
-        button{
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 10px;
-            font-size: 22px;
-            font-weight: 500;
-            color: #fff;
-            background-color: $blue;
-            cursor: pointer;
-        }
+}
+@media screen and (min-width: 1024px) {
+    .hero{
+        justify-content: start;
     }
 }
