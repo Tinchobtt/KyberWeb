@@ -3,7 +3,7 @@ const ProyectCard = ({proyect}) => {
     <div className="proyect-card shadow">
         <div className="proyect-content">
         <a href={proyect.link} target="_blanck">
-            <img src={proyect.content[0]} alt="" />
+            <img src={proyect.content[0]} alt={proyect.name} />
         </a>
         </div>
     </div>

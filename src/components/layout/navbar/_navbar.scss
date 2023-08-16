@@ -166,6 +166,9 @@ header{
                         cursor: pointer;
                         &:hover{
                             background-color: $darkerx2;
+                            .nav-link{
+                                color: $red-hover;
+                            }
                         }
                         .nav-link{
                             font-size: 18px;
