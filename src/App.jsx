@@ -3,15 +3,12 @@ import AppRouter from "./routes/AppRouter"
 import PackageContextProvider from "./context/PackageContext"
 
 const App = ()=> {
-
   return (
-    <>
-      <BrowserRouter>
-        <PackageContextProvider>
-          <AppRouter />
-        </PackageContextProvider>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <PackageContextProvider>
+        <AppRouter />
+      </PackageContextProvider>
+    </BrowserRouter>
   )
 }
 
